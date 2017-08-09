@@ -1,1 +1,141 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>Narrow Jumbotron Template for Bootstrap</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="jumbotron-narrow.css" rel="stylesheet">
+
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="js/ie-emulation-modes-warning.js"></script>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="clearfix">
+                <nav>
+                    <ul class="nav nav-pills float-right">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>        
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-7 col-md-offset-3">
+                    <img class="img-fluid header-logo center-block" src="logo.png" alt="Weebly to WordPress" title="Easily transfer your Weebly Site to WordPress">
+                    <h1>Shift your Weebly site to WordPress</h1>	
+                    <p>
+                        Ready for freedom? Move your Weebly blog to WordPress with a couple of clicks!
+                    </p>
+                    <p>
+                        We'll generate RSS feed containing all of the posts on your Weebly blog. The generated RSS feed can then be easily imported into WordPress or any other blogging platform that supports RSS importing.							
+                    </p>
+                    <p class="header">
+                        Provide your Weebly blog address and your e-mail bellow, press Submit and we'll make sure to notify you when your RSS file is ready. This shouldn't take more than a couple of hours.
+                    </p>		
+                </div>
+            </div>	  
+
+
+            <div class="row text-weight-normal">
+                <div class="col-md-12">
+
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="site" class="control-label col-md-3 col-xs-12">Weebly blog address</label>
+                            <div class="col-md-9 col-xs-12">
+                                <input type="email" class="form-control" name="site" id="site" placeholder="Your Weebly blog address">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mail" class="control-label col-md-3 col-xs-12">Your Email</label>
+                            <div class="col-md-9 col-xs-12">
+                                <input type="password" class="form-control" id="mail" name="mail" placeholder="Your Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-offset-3 col-xs-9">
+                                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>		
+
+
+
+                </div>
+            </div>	
+
+
+            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+            <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+		   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+		   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>  
+		   <script src="js/main.js"></script>
+			<script>		
+				$("#submit-form").submit(function(event) {		 		 
+				  event.preventDefault();
+				  
+				  $("input").attr("disabled", "disabled");
+			
+				  var $form = $( this ),
+						site = $form.find("input[name='site']").val(),
+						mail = $form.find("input[name='mail']").val();
+				 
+					var posting = $.post("weeblyrss.php", { 'site': site, 'mail': mail, 'type': 'rss' });		 				
+				  posting.done(function(data) {		  			  	
+					
+					var alertClassesInUse = $('#alert-box').attr('class').split(' ');
+					var filtered = alertClassesInUse.filter(function(elt) {
+						 return elt !== 'alert' && elt !== 'alert-' + data['status']; 
+						 }
+						);		  			  
+					
+						$("#alert-box")
+						.empty()
+						.append(data['message'])
+						.addClass("alert-" + data["status"])
+						.removeClass(filtered.join(" "));		  			
+						
+						$("input").removeAttr("disabled");		  		
+									
+				  });
+				});  	  	
+			</script>
+			
+			
+
+    </body>
+</html>
