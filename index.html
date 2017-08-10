@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -91,39 +91,40 @@
             <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
             <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
-		   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>		 
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>		 
 			<script>		
 				$("#submit-form").submit(function(event) {		 		 
-				  event.preventDefault();
+					event.preventDefault();
 				  
-				  $("input").attr("disabled", "disabled");
+					$("input").attr("disabled", "disabled");
 			
-				  var $form = $( this ),
+					var $form = $( this ),
 						site = $form.find("input[name='site']").val(),
 						mail = $form.find("input[name='mail']").val();
-				 
-					var posting = $.post("weeblyrss.php", { 'site': site, 'mail': mail, 'type': 'rss' });		 				
-				  posting.done(function(data) {		  			  	
-					
-					var alertClassesInUse = $('#alert-box').attr('class').split(' ');
-					var filtered = alertClassesInUse.filter(function(elt) {
-						 return elt !== 'alert' && elt !== 'alert-' + data['status']; 
-						 }
-						);		  			  
-					
-						$("#alert-box")
-						.empty()
-						.append(data['message'])
-						.addClass("alert-" + data["status"])
-						.removeClass(filtered.join(" "));		  			
 						
-						$("input").removeAttr("disabled");		  		
-									
+						
+						$.getJSON('http://generate-weeblyrss.rhcloud.com/generator/feed/enque?callback=?', {
+							blog: site,
+							email: mail,
+							feed_type: "rss"
+						}, function(data) {
+							var alertClassesInUse = $('#alert-box').attr('class').split(' ');
+							var filtered = alertClassesInUse.filter(function(elt) {
+								return elt !== 'alert' && elt !== 'alert-' + data['status']; 
+							});		  			  
+							
+							$("#alert-box")
+							.empty()
+							.append(data['message'])
+							.addClass("alert-" + data["status"])
+							.removeClass(filtered.join(" "));		  			
+								
+							$("input").removeAttr("disabled");							
+						});						
+											
 				  });
 				});  	  	
 			</script>
-			
-			
-
+						
     </body>
 </html>
