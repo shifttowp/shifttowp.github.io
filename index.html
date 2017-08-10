@@ -62,7 +62,7 @@
             <div class="row text-weight-normal">
                 <div class="col-md-12">
 
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" id="submit-form">
                         <div class="form-group">
                             <label for="site" class="control-label col-md-3 col-xs-12">Weebly blog address</label>
                             <div class="col-md-9 col-xs-12">
@@ -101,26 +101,25 @@
 					var $form = $( this ),
 						site = $form.find("input[name='site']").val(),
 						mail = $form.find("input[name='mail']").val();
+												
+					$.getJSON('http://generate-weeblyrss.rhcloud.com/generator/feed/enque?callback=?', {
+						blog: site,
+						email: mail,
+						feed_type: "rss"
+					}, function(data) {
+						var alertClassesInUse = $('#alert-box').attr('class').split(' ');
+						var filtered = alertClassesInUse.filter(function(elt) {
+							return elt !== 'alert' && elt !== 'alert-' + data['status']; 
+						});		  			  
 						
-						
-						$.getJSON('http://generate-weeblyrss.rhcloud.com/generator/feed/enque?callback=?', {
-							blog: site,
-							email: mail,
-							feed_type: "rss"
-						}, function(data) {
-							var alertClassesInUse = $('#alert-box').attr('class').split(' ');
-							var filtered = alertClassesInUse.filter(function(elt) {
-								return elt !== 'alert' && elt !== 'alert-' + data['status']; 
-							});		  			  
+						$("#alert-box")
+						.empty()
+						.append(data['message'])
+						.addClass("alert-" + data["status"])
+						.removeClass(filtered.join(" "));		  			
 							
-							$("#alert-box")
-							.empty()
-							.append(data['message'])
-							.addClass("alert-" + data["status"])
-							.removeClass(filtered.join(" "));		  			
-								
-							$("input").removeAttr("disabled");							
-						});						
+						$("input").removeAttr("disabled");							
+					});						
 											
 				});
 			</script>
