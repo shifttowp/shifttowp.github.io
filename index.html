@@ -8,16 +8,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="../../favicon.ico">
+        <meta name="author" content="">        
 
         <title>ShiftToWP: move your Weebly blog to WordPress</title>
 
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="jumbotron-narrow.css" rel="stylesheet">
@@ -86,13 +82,18 @@
 
 
 
+<div id="alert-box" class="alert alert-warning alert-dismissible hide" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  Better check yourself, you're not looking too good.
+</div>					
+					
                 </div>
+				
+				
             </div>	
 
 
-            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-            <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
+			
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>		 
 			<script>		
 				$("#submit-form").submit(function(event) {		 		 
@@ -108,17 +109,18 @@
 						blog: site,
 						email: mail,
 						feed_type: "rss"
-					}, function(data) {
-						var alertClassesInUse = $('#alert-box').attr('class').split(' ');
-						var filtered = alertClassesInUse.filter(function(elt) {
-							return elt !== 'alert' && elt !== 'alert-' + data['status']; 
-						});		  			  
-						
+					}, function(data) {						
+						var classes = ["alert-success", "alert-warning"];
+						if (data.status === 'error') {
+							classes.reverse();
+						}
+														
 						$("#alert-box")
 						.empty()
-						.append(data['message'])
-						.addClass("alert-" + data["status"])
-						.removeClass(filtered.join(" "));		  			
+						.append(data.message)
+						.addClass(classes[0])
+						.removeClass(classes[1])
+						.removeClass('hide');		  			
 							
 						$("input").removeAttr("disabled");							
 					});						
@@ -136,5 +138,12 @@
 
 			</script>			
 						
+		<!--
+			<footer class="footer">
+				<div class="container">
+					<p class="text-muted">Place sticky footer content here.</p>
+				</div>
+			</footer>						
+	    -->
     </body>
 </html>
