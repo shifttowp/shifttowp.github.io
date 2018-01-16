@@ -1,0 +1,336 @@
+
+body {
+  background-color: #f2f2f2;
+    font-family: "Lato";    
+    font-size: 16px;
+    color: #555;
+    padding-top: 50px;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+.spacing {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.tutorial h3 {
+	color: #3bc492;
+	font-weight: bold;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway";
+    font-weight: 300;
+    color: #333;
+}
+
+
+/* Paragraph & Typographic */
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #3bc492;
+    word-wrap: break-word;
+
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover,
+a:focus {
+    color: #c0392b;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:before,
+a:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+/* ==========================================================================
+   Wrap Sections
+   ========================================================================== */
+
+#headerwrap {
+	background-color: #34495e;
+	padding-top: 60px;
+}
+
+#headerwrap h1 {
+	margin-top: 30px;
+	color: white;
+	font-size: 70px;
+	
+}
+
+#headerwrap h3 {
+	color: white;
+	font-size: 30px;
+}
+
+#headerwrap h5 {
+	color: white;
+	font-weight: 700;
+	text-align: left;
+}
+
+#headerwrap p {
+	text-align: left;
+	color: white
+}
+
+/* intro Wrap */
+
+#intro {
+	padding-top: 50px;
+	border-top: #bdc3c7 solid 5px;
+}
+
+#features {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#features .ac a{
+	font-size: 20px;
+}
+
+/* Showcase Wrap */
+
+#showcase {
+	display: block;
+	background-color: #34495e;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#showcase h1 {
+	color: white;
+}
+
+#footerwrap {
+	background-color: #2f2f2f;
+	color: white;
+	padding-top: 40px;
+	padding-bottom: 60px;
+	text-align: left;
+}
+
+#footerwrap h3 {
+	font-size: 28px;
+	color: white;
+}
+
+#footerwrap p {
+	color: white;
+	font-size: 18px;
+}
+
+/* Copyright Wrap */
+
+#c {
+	background: #222222;
+	padding-top: 15px;
+	text-align: right;
+}
+
+#c p {
+	color: white
+}
+
+
+
+/* Enque form */
+.form-group {
+	margin-bottom: 15px;
+}
+
+label {
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.enque-form {
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.form-control {
+    height: auto!important;
+	padding: 8px 12px !important;
+}
+
+.input-group {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+}
+
+#button {
+    border: 1px solid #ccc;
+    margin-top: 28px;
+    padding: 6px 12px;
+    color: #666;
+    text-shadow: 0 1px #fff;
+    cursor: pointer;
+    -moz-border-radius: 3px 3px;
+    -webkit-border-radius: 3px 3px;
+    border-radius: 3px 3px;
+    -moz-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    background: #f5f5f5;
+    background: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #eeeeee));
+    background: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 400px;
+    padding: 10px 40px;
+	background:#009edf;
+	color: #FFF;
+    text-shadow: none;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+	-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+	box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+
+}
+
+span.input-group-addon i {
+    color: #009edf;
+    font-size: 17px;
+}
+
+.submit-button {
+	margin-top: 5px;
+}
+
+
+/* thumbnail */
+div.thumbnail div.caption {
+	background-color: #999999;
+	color: white;	
+}
+
+
+/* Pricing table - https://codepen.io/zitrusfrisch/pen/uixnf */
+table { 
+	width: 100%;
+	text-align: left;
+	border-spacing: 0;
+	border-collapse: collapse;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+th { 
+	background-color: #E7E7E7; 
+	color: #3bc492 
+}
+
+th, td { 
+	font-family: inherit; 
+	font-size: .875em; 
+	line-height: 1.45; 
+	color: #444; 
+	vertical-align: middle; 
+	padding: 1em; 
+	}
+
+th { font-weight: 600; }
+
+colgroup:nth-child(1) { width: 25%; border: 0 none; }
+colgroup:nth-child { width: 15%; border: 0 none; }
+colgroup { border: 1px solid #ccc; }
+
+/* Tablehead */
+thead th { 
+	text-align: center; 
+	border: 1px solid #ccc; 
+	font-weight: 400; 
+	color: #999; 
+}
+thead th:nth-child(1) { 
+	border-top: 0; 
+	border-left: 0; 
+	background: transparent;  
+}
+thead th h2 { 
+	font-weight: 300; 
+	line-height: 1.2; 
+	color: #3bc492; 
+}
+thead th h2 + p { line-height: 1.4; }
+
+
+/* Tablebody */
+tbody th { 
+	background: #fff; 
+	border: 1px solid #ccc; 
+}
+tbody th span { 
+	font-weight: normal; 
+	font-size: 87.5%; 
+	color: #999; 
+	display: block; 
+}
+
+tbody td { 
+	background: #fff; 
+	text-align: center; 
+}
+
+tbody td { 
+	background: #f5f5f5; 
+	border: 1px solid #ccc; 
+	border-width: 1px ; 
+}

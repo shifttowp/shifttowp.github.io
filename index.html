@@ -1,149 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="google-site-verification" content="WtFjdo2PntgKWQQwhuLxklOxB8146OoHqvVJFDtuvZM" />
-		<meta name="msvalidate.01" content="918F2F7C4583BAB7614664B2C53D3C7A" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta name="description" content="">
-        <meta name="author" content="">        
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="google-site-verification" content="WtFjdo2PntgKWQQwhuLxklOxB8146OoHqvVJFDtuvZM" />
+	<meta name="msvalidate.01" content="918F2F7C4583BAB7614664B2C53D3C7A" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShiftToWP - Move your Weebly blog to WordPress">
+    <meta name="author" content="Gregor (ShiftToWP)">
+    <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
 
-        <title>ShiftToWP: move your Weebly blog to WordPress</title>
+    <title>ShiftToWP: Move your Weebly blog to WordPress</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
 
-        <!-- Custom styles for this template -->
-        <link href="jumbotron-narrow.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
 
-        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-        <script src="js/ie-emulation-modes-warning.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
 
-    <body>
-        <div class="container">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+  </head>
 
-            <div class="row">
-                <div class="col-md-7 col-md-offset-3">
-				
-					<div class="media header">
-						<div class="media-left">			
-							<img class="img-fluid header-logo" src="logo.png" alt="Weebly to WordPress" title="Easily transfer your Weebly Site to WordPress"/>    
-						</div>
-						<div class="media-body">    
-							<h1 class="media-heading">Shift your Weebly site to WordPress</h1>		
-						</div>					
-					</div>
-                                        
-                    <p>
-                        Ready for freedom? Move your Weebly blog to WordPress with a couple of clicks!
-                    </p>
-                    <p>
-                        We'll generate RSS feed containing all of the posts on your Weebly blog. The generated RSS feed can then be easily imported into WordPress or any other blogging platform that supports RSS importing.							
-                    </p>
-                    <p class="header">
-                        Provide your Weebly blog address and your e-mail bellow, press Submit and we'll make sure to notify you when your RSS file is ready. This shouldn't take more than a couple of hours.
-                    </p>		
+  <body data-spy="scroll" data-offset="0" data-target="#navigation">
+
+    <!-- Fixed navbar -->
+    <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><b>ShiftToWP</b></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#home" class="smothscroll">Home</a></li>
+            <li><a href="#tutorial" class="smothscroll">Tutorial</a></li>
+            <li><a href="#pricing" class="smothScroll">Pricing</a></li>
+            <!-- WIP <li><a href="#services" class="smothScroll">Services</a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <section id="home"></section>
+    <div id="headerwrap">
+      <div class="container" style="padding-bottom: 20px">
+        <div class="row centered" >
+          <div class="col-lg-12">
+            <h1>Shift your <b>Weebly</b> site to <b>WordPress</b></h1>
+            <br>
+          </div>
+
+          <div class="col-lg-offset-1 col-lg-4">
+            <h5>Ready for freedom?</h5>
+            <p>
+              Move your Weebly blog to WordPress with a couple of clicks!                                     
+            </p>	    			
+			<p>
+        Provide your Weebly blog address and your e-mail, press <i>Submit</i> and we'll notify you when your content is ready.
+        This shouldn't take more than a couple of hours. 
+			</p>
+			<p>
+				For best results, make sure to read our <a href="#tutorial">comprehensive migration tutorial</a>.
+			</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="enque-form main-center">					
+
+              <form id="submit-form">
+
+                <div class="form-group">
+                  <label for="site" class="cols-sm-2 control-label">Weebly Blog URL</label>
+                  <div class="cols-sm-10">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-file-text fa" aria-hidden="true"></i></span>
+                      <input type="text" class="form-control" name="site" id="site"  placeholder="Enter your Weebly blog address"/>
+                    </div>
+                  </div>
                 </div>
-            </div>	  
 
-
-            <div class="row text-weight-normal">
-                <div class="col-md-12">
-
-                    <form class="form-horizontal" id="submit-form">
-                        <div class="form-group">
-                            <label for="site" class="control-label col-md-3 col-xs-12">Weebly blog address</label>
-                            <div class="col-md-9 col-xs-12">
-                                <input type="text" class="form-control" name="site" id="site" placeholder="Your Weebly blog address">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="mail" class="control-label col-md-3 col-xs-12">Your Email</label>
-                            <div class="col-md-9 col-xs-12">
-                                <input type="email" class="form-control" id="mail" name="mail" placeholder="Your Email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-offset-3 col-xs-9">
-                                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                            </div>
-                        </div>
-                    </form>		
-
-
-
-<div id="alert-box" class="alert alert-warning alert-dismissible hide" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  Better check yourself, you're not looking too good.
-</div>					
-					
+                <div class="form-group">
+                  <label for="mail" class="cols-sm-2 control-label">Your Email</label>
+                  <div class="cols-sm-10">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                      <input type="text" class="form-control" name="mail" id="mail"  placeholder="Enter your Email"/>
+                    </div>
+                  </div>
                 </div>
-				
-				
-            </div>	
+
+                <div class="form-group ">
+                  <a href="http://deepak646.blogspot.in" target="_blank" id="button" class="btn btn-primary btn-lg btn-block submit-button">Submit</a>
+                </div>
+
+              </form>
+            </div>
+          </div>
+		  
+		  <div class="col-lg-offset-2 col-lg-7">
+			<div id="alert-box" class="alert alert-warning alert-dismissible hide" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			  &nbsp;
+			</div>		  		  
+		  </div>
+
+        </div>
+      </div> <!--/ .container -->
+    </div><!--/ #headerwrap -->
 
 
+    <section id="tutorial"></section>
+    <!-- INTRO WRAP -->
+    <div id="intro">
+      <div class="container">
+        <div class="row ">
+          <h1 class="">Migration tutorial</h1>
+        </div>
+
+        <div class="row tutorial">
+
+          <!-- -- Tutorial ---->
+          <div class="col-lg-8">
+
+            <h3 class="title" id="enable">1. Enable <i>Blog Archives</i> and <i>Blog Categories</i></h3>
+            <p>
+              To ensure our web app reaches all of your blog posts <i>Blog Archives</i> element should be visible on your Weebly blog.
+              This element is usually visible by default on the right side of your blog. If you can't see it, you should:
+            </p>
+            
+            <ol>
+              <li>Go to your Weebly Editor.</li>
+              <li>Select your blog page if not selected already.</li>
+              <li>Click on the <i>Blog Archives</i> element on the left menu then drag this element on your blog.</li>
+              <li>Click <i>Publish</i> when you're done.</li>
+              <li>Visit your Weebly blog and ensure archives are visible.</li>										
+            </ol>
+            
+            <p>
+              Do the same for <i>Blog Categories</i> element if you also wish to move your categories (tags) from Weebly to WordPress.
+            </p>
+            
+            <div class="thumbnail">
+              <img src="assets/img/tut-archives.png" alt="Blog Archives element should be visible on your Weebly blog"/>
+              <div class="caption">
+                <b>Image 1: </b><i> Blog Archives</i> element should be visible on your Weebly blog to get the best results
+                when migrating from Weebly
+              </div>
+            </div>	            
+            <div class="spacing"></div>
+
+            <h3 class="title" id="run">2. Run our web app and check your e-mail</h3>
+            <p>					
+              Input your e-mail address and your Weebly blog address <a href="#home">here</a> and click <i>Submit</i>. The address
+              should point to a valid Weebly blog that has the <i>Blog Archives</i> visible. After submitting both pieces of data, you'll
+              shortly receive an email. Either informing you that your blog was successfually processed (see Image 2 bellow) or
+              notifying you that no Weebly blog could have been found at the address you provided.                            
+            </p>
+                          
+            <div class="thumbnail">
+              <img src="assets/img/tut-notification-email.png" alt="Blog Archives element should be visible on your blog">
+              <div class="caption">
+                <b>Image 2: </b>You'll receive an e-mail from us once your blog is processed. Do a right click on both 
+				of the links and save the files to your computer.
+              </div>
+            </div>									
+            <div class="spacing"></div>
+
+            <h3 class="title" id="import">3. Import your blog content from Weebly to WordPress</h3>		 		
+            <p>If we were able to find a Weebly blog at the address you provided, you'll receive a link pointing to an XML 
+              file (also called WXR file) that contains your Weebly blog content in WordPress compatible format. You should then:
+            </p>
+            <ol>
+
+              <li>Download this XML file by right clicking on the link and choose <i>Save as</i>.</li>
+              <li>Save the file to your computer.</li>
+              <li>Go to your WordPress admin panel.</li>
+              <li>Choose <i>Tools, Import, WordPress</i>.</li>
+              <li>Click <i>Run Importer</i>, then click <i>Browse</i> button.</li>
+              <li>Point to the XML file you downloaded from our e-mail and click <i>Upload file and import</i>button.</li>
+              <li>Click <i>Submit</i>.</li>
+              <li>Go to <i>Posts, All Posts</i> and ensure you can see the imported posts.</li>              
+            </ol>
 			
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>		 
-			<script>		
-				$("#submit-form").submit(function(event) {		 		 
-					event.preventDefault();
-				  
-					$("input").attr("disabled", "disabled");
+            <div class="thumbnail">
+              <img src="assets/img/tut-import-wxr.png" alt="Import the XML file via WP Admin Panel">
+              <div class="caption">
+                <b>Image 3: </b>Go to your WordPress Admin Panel and import the XML file containing your blog content
+              </div>
+            </div>				
+            <div class="spacing"></div>
+
+            <h3 class="title" id="redirects">4. Introduce redirects</h3>		 		
+            <p>
+              If you've a custom domain for your Weebly blog the next step after moving your content to WordPress 
+              should be introducing redirects for imported posts so that your visitors don't land on 404 page (meaning the blog posts wasn't found)
+              when they use old links to your posts.
+            </p>
+            <p>
+              Links (URLs) pointing to your Weebly blog posts come in two flavors. For blog post 
+              named "My Blog Posts" from February 2017 they're:
+            </p>
+            
+            <ul>
+              <li>www.example.com/<b>blog/my-blog-post/</b></li>
+              <li>www.example.com/<b>1/post/2017/02/my-blog-post.html</b></li>              
+            </ul>
+              
+            <p>
+            The same post will be accessible via www.example.com/<b>2018/02/17/my-blog-post</b> on your new WordPress site.                       
+            When someone wants to visit this blog post from one of the old links, WordPress should route this request to new link.            
+            </p>
+            <p>
+            Enter redirects. They tell WordPress to take special care of certain links (ie.
+            old Weebly blog posts) and route them to new URLs. Using our web app, you'll receive these redirects as an CSV (Comma Separeted Values) file
+            with the notification e-mail after your blog is successfully processed (see Image 1 above).                        
+            </p>
+            
+            <p>
+              Save the CSV file with redirects to your computer then:
+            </p>
+            <ol>
+              <li>
+                Install the following plugins:
+                <a href="https://wordpress.org/plugins/simple-301-redirects/#install">
+                  Simple 301 Redirects
+                </a> and
+                <a href="https://wordpress.org/plugins/simple-301-redirects-addon-bulk-uploader">
+                  Simple 301 Redirects - Addon - Bulk Uploader
+                </a>.              
+              </li>                            
+              <li>
+                Download the CSV file containing permalinks with our email (see picture ? above) 
+                by doing a right-click then choose <i>Save as</i>.
+              </li>
+              <li>
+                In your WordPress Admin Panel choose <i>Settings, 301 Bulk Redirects</i>.
+              </li>
+              <li>
+                Click <i>Browse</i> button and point to the CSV file you downloaded, then click <i>Upload 301s</i>.
+              </li>  
+              <li>
+                In your WordPress Admin Panel choose <i>Settings, Permalinks</i>.
+              </li>
+              <li>
+                Under <i>Common Settings</i> section choose <i>Day and name</i> option and click <i>Save Changes</i> button bellow.
+              </li>
+              <li>
+                Old post links from Weebly should now be automatically translated to WordPress post links.
+              </li>               
+            </ol>
 			
-					var $form = $( this ),
-						site = $form.find("input[name='site']").val(),
-						mail = $form.find("input[name='mail']").val();
+            <div class="thumbnail">
+              <img src="assets/img/tut-import-wxr.png" alt="Import redirects from the CSV file using 301 Bulk Redirects plugin">
+              <div class="caption">
+                <b>Image 4: </b>Go to your WordPress Admin Panel and import redirects from the CSV file using 301 Bulk Redirects plugin
+              </div>
+            </div>				            
+            <div class="spacing"></div>
+
+            <h3 class="title" id="images">5. Move images from Weebly to your WordPress installation</h3>		 		
+            <p>
+              In case your blog posts contain any images they'll still be served from Weebly's servers. You should therefore
+              copy them to server that hosts your WordPress site. In order to do that:
+            </p>
+            <ol>
+              <li>
+                Download and install <a href="https://wordpress.org/plugins/import-external-images/">Import Extenal Images</a> 
+                plugin.
+              </li>
+              <li>
+                Open your WP Admin Panel and go to <i>Media</i>, <i>Import Images</i>.
+              </li>
+              <li>
+                Click <i>Import Images Now</i> button and wait until the process is done.
+              </li>
+              <li>
+                Refresh the page to see if any images remain and run the process again if necessary. Continue doing this
+                until all images are transfered.
+              </li>  
+              <li>
+                Go to <i>Media</i>, <i>Library</i> and check if you can see the transfered images.
+              </li>
+            </ol>            
+            
+            <div class="thumbnail">
+              <img src="assets/img/tut-import-images.png" alt="Import images using Import External Images plugin">
+              <div class="caption">
+                <b>Image 6: </b>Go to your WordPress Admin Panel and import images from Weebly using <i>Import Extenal Images</i>  plugin
+              </div>
+            </div>	      
+            <div class="spacing"></div>
+
+            <h3 class="title" id="premium">6. Consider our premium web app features</h3>		 		
+            <p>Our free plan is limited to 100 posts per single blog and 5 categories (tags). If your blog has 
+              more than that (or you have multiple blogs), you'll be offered two purchase options when receiving 
+              your blog content via e-mail (see Image 1 above).
+              These options are:
+            </p>
+              <ul>
+                <li>
+                  Purchase the remaining blog posts and
+                </li>
+                <li>
+                  Purchase the remaining blogs posts in addition to categories (tags) and blog comments.
+                </li>
+              </ul>
+            <p>
+              Click on the appropriate PayPal button to make the purchase. We'll automatically process your blog as soon as we receive
+              your payment. Both options also include redirects.
+              
+              Please see our <a href="#pricing">Pricing table</a> for additional info.
+            </p>
+
+            <!-- 
+            WIP
+            <h3 class="ctitle">7. Consider our services</h3>		 		
+            <p>
+              Link to services: 
+              - static page migration
+              - make avada compatible / [this_kind_of_shortcode] insertion for posts that follow predictable structure
+              - Images migration for restrictive host providers
+              - featured image
+              - additional CSS insertion or cleanup				
+            </p>
+            -->
+            
+            <h3 class="ctitle" id="domain">7. Move your domain</h3>
+            <p>
+              Please follow 
+              <a href="https://hc.weebly.com/hc/en-us/articles/216733938-Unlock-Your-Domain-and-Get-the-EPP-Code">
+                this                  
+              </a>
+              guide to transfer your domain from Weebly.
+            </p>
+          </div>
+
+          <!-- -- SIDEBAR ---->
+          <div class="col-lg-4">
+            <h4>Table of contents</h4>
+            <div class="hline"></div>
+            <ol>
+              <li><a href="#enable">Enable Blog Archives and Blog Categories</a></li>
+              <li><a href="#run">Run our web app and check your e-mail</a></li>
+              <li><a href="#import">Import your blog content from Weebly to WordPress</a></li>
+              <li><a href="#redirects">Introduce redirects</a></li>
+              <li><a href="#images">Move images from Weebly to your WordPress installation</a></li>
+              <li><a href="#premium">Consider our premium web app features</a></li>
+              <li><a href="#domain">Move your domain</a></li>
+            </ol>
+			
+            <div class="spacing"></div>
+          </div>
+        </div>			
+
+        <br>
+        <hr>
+      </div> <!--/ .container -->
+    </div><!--/ #introwrap -->
+
+    <!-- FEATURES WRAP -->
+    <div id="features">
+      <div class="container">
+        <div class="row">          
+            <h1 class="title" id="pricing">Pricing</h1>    
+			<br/>
+			
+			<p>
+				We'll migrate 100 posts and 5 categories from your blog for free. If your blog has more posts or you'd also like to move comments and categories (tags), use the
+				appropriate PayPal button inside the notification e-mail you received from us. Prices are set according to the table bellow.
+			</p>			
+			
+            <table>
+
+              <colgroup></colgroup>
+              <colgroup></colgroup>
+              <colgroup></colgroup>
+              <colgroup></colgroup>
+
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>
+                    <h2>XS</h2>
+                    <p>< 100 posts</p>
+                  </th>
+                  <th>
+                    <h2>S</h2>
+                    <p>100+ posts</p>	    			
+                  </th>
+                  <th>
+                    <h2>M</h2>
+                    <p>250+ posts</p>
+                  </th>
+                  <th>
+                    <h2>L</h2>
+                    <p>500+ posts</p>
+                  </th>				
+                  <th>
+                    <h2>XL</h2>
+                    <p>1000+ posts</p>
+                  </th>				
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <th>Plan price<span>Total number of posts is "rounded down" to the cheapest plan. If you have 125 posts, your plan is S.</span></th>
+                  <td>$ 9.95</td>
+				  <td>$ 19.95</td>
+				  <td>$ 29.95</td>
+				  <td>$ 39.95</td>
+				  <td>$ 49.95</td>
+
+                </tr>		
+
+                <tr>
+                  <th>Additional posts<span>Any additional posts until next plan are $ 0.02. If you have 125 posts you'll be charged $ 20 (for plan 'S') plus $ 0.5 for the remaining posts.</span></th>
+                  <td colspan="5">+ $ 0.02 per post</td>
+                </tr>
+                <tr>
+                  <th>Categories and comments<span>These are half the total posts price. That's $ 10.25 if you have 125 posts.</span></th>
+                  <td colspan="5">+ half the total posts price</td>
+
+                </tr>
+              </tbody>
+
+            </table>
+			
+            <br>
+            <br>
+
+         
+        </div>
+      </div><!--/ .container -->
+    </div><!--/ #features -->
+
+
+	<!-- WIP
+    <section id="showcase"></section>
+    <div id="showcase">
+      <div class="container">
+        <div class="row">
+          <h1 class="centered">Services</h1>
+          <br>
+          <div class="col-lg-8 col-lg-offset-2">
+  
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>	
+      </div>
+    </div>	
+	-->
+
+
+	<!-- WIP
+    <section id="contact" name="contact"></section>
+    <div id="footerwrap">
+      <div class="container">
+        <div class="col-lg-5">
+          <h3>Address</h3>
+          <p>
+            Av. Greenville 987,<br/>
+            New York,<br/>
+            90873<br/>
+            United States
+          </p>
+        </div>
+
+        <div class="col-lg-7">
+          <h3>Drop Us A Line</h3>
+          <br>
+          <form role="form" action="#" method="post"> 
+            <div class="form-group">
+              <label for="name1">Your Name</label>
+              <input type="text" name="Name" class="form-control" id="name1" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <label for="email1">Email address</label>
+              <input type="email" name="Mail" class="form-control" id="email1" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label>Your Text</label>
+              <textarea class="form-control" name="Message" rows="3"></textarea>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-large btn-success">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+	-->
+
+    <div id="c">
+      <div class="container">
+        <p>Copyright 2018 ShiftToWP. Theme by <a href="http://www.blacktie.co">BLACKTIE.CO</a></p>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->    
+    <script>
+		$("#submit-form").submit(function(event) {		 		 
+			event.preventDefault();
+		  
+			$("input").attr("disabled", "disabled");
+
+			var $form = $( this ),
+				site = $form.find("input[name='site']").val(),
+				mail = $form.find("input[name='mail']").val();
+										
+			$.getJSON('http://168.235.104.151/shifttowp/enque?callback=?', {
+				url: site,
+				email: mail						
+			}, function(data) {						
+				var classes = ["alert-success", "alert-warning"];
+				if (data.status === 'error') {
+					classes.reverse();
+				}
 												
-					$.getJSON('http://168.235.104.151/generate/feed/enque?callback=?', {
-						blog: site,
-						email: mail,
-						feed_type: "rss"
-					}, function(data) {						
-						var classes = ["alert-success", "alert-warning"];
-						if (data.status === 'error') {
-							classes.reverse();
-						}
-														
-						$("#alert-box")
-						.empty()
-						.append(data.message)
-						.addClass(classes[0])
-						.removeClass(classes[1])
-						.removeClass('hide');		  			
-							
-						$("input").removeAttr("disabled");							
-					});						
-											
-				});
-			</script>
-			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-			  ga('create', 'UA-104396315-1', 'auto');
-			  ga('send', 'pageview');
-
-			</script>			
-						
-		<!--
-			<footer class="footer">
-				<div class="container">
-					<p class="text-muted">Place sticky footer content here.</p>
-				</div>
-			</footer>						
-	    -->
-    </body>
+				$("#alert-box")
+				.empty()
+				.append(data.message)
+				.addClass(classes[0])
+				.removeClass(classes[1])
+				.removeClass('hide');		  			
+					
+				$("input").removeAttr("disabled");							
+			});						
+									
+		});
+    </script>
+  </body>
 </html>
