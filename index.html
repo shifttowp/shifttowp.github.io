@@ -513,7 +513,17 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->    
-    <script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104396315-1"></script>
+    <script>      
+    
+    // Google Analytics.
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-104396315-1');      
+      
 		$("#button").click(function(event) {		 		 
 			event.preventDefault();
 		  
