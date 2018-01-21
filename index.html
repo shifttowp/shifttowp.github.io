@@ -524,6 +524,16 @@
     gtag('js', new Date());
     gtag('config', 'UA-104396315-1');      
       
+    // GA event tracking - menu.
+    $('ul.nav a').click(function(event) {
+      ga('send', 'event', 'Menu', $(event.target).text(), '');
+    });
+    
+    // GA event tracking - tutorial.
+    $('div.tutorial li a').click(function(event) {
+      ga('send', 'event', 'Tutorial TOC', $(event.target).text(), '');
+    });
+  
 		$("#button").click(function(event) {		 		 
 			event.preventDefault();
 		  
