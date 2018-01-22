@@ -527,45 +527,44 @@
     <!-- Placed at the end of the document so the pages load faster -->    
     <script>
 
-    // GA event tracking - menu.
-    $('ul.nav a').click(function(event) {
-      ga('send', 'event', 'Menu', $(event.target).text());      
-    });
-    
-    // GA event tracking - tutorial.
-    $('div.tutorial li a').click(function(event) {
-      ga('send', 'event', 'Tutorial TOC', $(event.target).text());
-    });
-  
-		$("#button").click(function(event) {		 		 
-			event.preventDefault();
-		  
-			$("input").attr("disabled", "disabled");
+      // GA event tracking - menu.
+      $('ul.nav a').click(function(event) {
+        ga('send', 'event', 'Menu', $(event.target).text());      
+      });
 
-			var $form = $("#submit-form"),
-				site = $form.find("input[name='site']").val(),
-				mail = $form.find("input[name='mail']").val();
-										
-			$.getJSON('http://168.235.104.151/shifttowp/enque?callback=?', {
-				url: site,
-				email: mail						
-			}, function(data) {						
-				var classes = ["alert-success", "alert-warning"];
-				if (data.status === 'error') {
-					classes.reverse();
-				}
-												
-				$("#alert-box")
-				.empty()
-				.append(data.message)
-				.addClass(classes[0])
-				.removeClass(classes[1])
-				.removeClass('hide');		  			
-					
-				$("input").removeAttr("disabled");							
-			});						
-									
-		});
+      // GA event tracking - tutorial.
+      $('div.tutorial li a').click(function(event) {
+        ga('send', 'event', 'Tutorial TOC', $(event.target).text());
+      });
+
+      $("#button").click(function(event) {		 		 
+        event.preventDefault();
+
+        $("input").attr("disabled", "disabled");
+
+        var $form = $("#submit-form"),
+          site = $form.find("input[name='site']").val(),
+          mail = $form.find("input[name='mail']").val();
+
+        $.getJSON('http://168.235.104.151/shifttowp/enque?callback=?', {
+          url: site,
+          email: mail						
+        }, function(data) {						
+          var classes = ["alert-success", "alert-warning"];
+          if (data.status === 'error') {
+            classes.reverse();
+          }
+
+          $("#alert-box")
+          .empty()
+          .append(data.message)
+          .addClass(classes[0])
+          .removeClass(classes[1])
+          .removeClass('hide');		  			
+
+          $("input").removeAttr("disabled");							
+        });
+      });
     </script>
   </body>
 </html>
