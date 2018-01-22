@@ -25,6 +25,18 @@
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/smoothscroll.js"></script>
+    
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-104396315-1', 'auto');
+    ga('send', 'pageview');
+    
+    // ga('create', 'UA-104396315-1', {'cookieDomain': 'none'});
+    // ga('set', 'checkProtocolTask', function(){ /* nothing */ });
+    // ga('send', 'pageview');        
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
   </head>
 
   <body data-spy="scroll" data-offset="0" data-target="#navigation">
@@ -513,25 +525,16 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104396315-1"></script>
-    <script>      
-    
-    // Google Analytics.
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-104396315-1');      
-      
+    <script>
+
     // GA event tracking - menu.
     $('ul.nav a').click(function(event) {
-      ga('send', 'event', 'Menu', $(event.target).text(), '');
+      ga('send', 'event', 'Menu', $(event.target).text());      
     });
     
     // GA event tracking - tutorial.
     $('div.tutorial li a').click(function(event) {
-      ga('send', 'event', 'Tutorial TOC', $(event.target).text(), '');
+      ga('send', 'event', 'Tutorial TOC', $(event.target).text());
     });
   
 		$("#button").click(function(event) {		 		 
