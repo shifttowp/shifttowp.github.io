@@ -1,2 +1,2 @@
 # shifttowp.github.io
-Shift to WordPress Page
+Shift to WordPress Page (http://shifttowp.com)
